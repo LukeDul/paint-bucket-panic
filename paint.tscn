@@ -2,50 +2,50 @@
 
 [ext_resource type="Script" path="res://paint.gd" id="1_1i43e"]
 [ext_resource type="Texture2D" uid="uid://ih1bxanvjje3" path="res://art/paint/paint_color.png" id="2_euv3v"]
-[ext_resource type="Texture2D" path="res://art/paint/IMG_7156.PNG" id="2_pilf0"]
-[ext_resource type="Texture2D" path="res://art/paint/IMG_7157.PNG" id="3_1li6e"]
-[ext_resource type="Texture2D" path="res://art/paint/IMG_7158.PNG" id="4_yvf23"]
-[ext_resource type="Texture2D" path="res://art/paint/IMG_7159 2.PNG" id="5_guc1k"]
-[ext_resource type="Texture2D" path="res://art/paint/IMG_7159.PNG" id="6_eeacp"]
-[ext_resource type="Texture2D" path="res://art/paint/IMG_7160.PNG" id="7_lbrs7"]
-[ext_resource type="Texture2D" path="res://art/paint/IMG_7162.PNG" id="8_ggw3n"]
-[ext_resource type="Texture2D" path="res://art/paint/IMG_7163.PNG" id="9_77noc"]
+[ext_resource type="Texture2D" uid="uid://bin0ar6wa7lli" path="res://art/paint/IMG_7201.PNG" id="3_d0sit"]
+[ext_resource type="Texture2D" uid="uid://b6qmyh10t1d2l" path="res://art/paint/IMG_7202.PNG" id="4_w4an7"]
+[ext_resource type="Texture2D" uid="uid://bti1e20u2c1u0" path="res://art/paint/IMG_7203.PNG" id="5_t1k5p"]
+[ext_resource type="Texture2D" uid="uid://brpkhhfuavwwj" path="res://art/paint/IMG_7204.PNG" id="6_0cwpo"]
+[ext_resource type="Texture2D" uid="uid://b1jhud2wxjn37" path="res://art/paint/IMG_7205.PNG" id="7_bvqsu"]
+[ext_resource type="Texture2D" uid="uid://bthhgxbyt6kdm" path="res://art/paint/IMG_7206.PNG" id="8_j4m8g"]
+[ext_resource type="Texture2D" uid="uid://c3y8ulaaga2gc" path="res://art/paint/IMG_7207.PNG" id="9_t1f4s"]
+[ext_resource type="Texture2D" uid="uid://cqh1to1p0vt6u" path="res://art/paint/IMG_7208.PNG" id="10_pmb01"]
 [ext_resource type="AudioStream" uid="uid://cltcvdk4s2rb4" path="res://splat-305791.mp3" id="11_055w3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bj3hl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pilf0")
+"texture": ExtResource("3_d0sit")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_1li6e")
+"texture": ExtResource("4_w4an7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_yvf23")
+"texture": ExtResource("5_t1k5p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_guc1k")
+"texture": ExtResource("6_0cwpo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_eeacp")
+"texture": ExtResource("7_bvqsu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_lbrs7")
+"texture": ExtResource("8_j4m8g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_ggw3n")
+"texture": ExtResource("9_t1f4s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_77noc")
+"texture": ExtResource("10_pmb01")
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 8.5
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tok2c"]
-size = Vector2(120, 20.2229)
+size = Vector2(120, 21.2637)
 
 [node name="Paint" type="Area2D"]
 script = ExtResource("1_1i43e")
@@ -55,13 +55,13 @@ scale = Vector2(3.75605, -0.625687)
 texture = ExtResource("2_euv3v")
 
 [node name="PaintFace" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -7)
-scale = Vector2(0.0146761, 0.0124118)
+position = Vector2(-2.98023e-08, 3)
+scale = Vector2(0.0535072, 0.0438703)
 sprite_frames = SubResource("SpriteFrames_bj3hl")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.1199)
+position = Vector2(0, -0.559938)
 scale = Vector2(0.992902, 1.07602)
 shape = SubResource("RectangleShape2D_tok2c")
 

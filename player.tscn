@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://g5efcmj1tnd1"]
+[gd_scene load_steps=31 format=3 uid="uid://g5efcmj1tnd1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_j8pl8"]
 [ext_resource type="Texture2D" uid="uid://bjbsr3764ncvd" path="res://art/IMG_7142.PNG" id="2_2oopr"]
@@ -18,11 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://1ilami7aieaj" path="res://art/run/run_right_clr/IMG_7183.PNG" id="10_5lr6e"]
 [ext_resource type="Texture2D" uid="uid://bnyavu2daahxd" path="res://art/run/run_right_clr/IMG_7184.PNG" id="11_x5krp"]
 [ext_resource type="Texture2D" uid="uid://bplwews3l5ikk" path="res://art/run/run_right_clr/IMG_7185.PNG" id="12_pjej8"]
-[ext_resource type="Texture2D" path="res://art/run/IMG_7186.PNG" id="13_o28u2"]
-[ext_resource type="Texture2D" path="res://art/run/IMG_7179.PNG" id="14_6vp6x"]
-[ext_resource type="Texture2D" path="res://art/run/IMG_7180.PNG" id="15_vdaxv"]
-[ext_resource type="Texture2D" path="res://art/run/IMG_7181.PNG" id="16_x1uuy"]
-[ext_resource type="Texture2D" path="res://art/run/IMG_7182.PNG" id="17_j8fyn"]
 [ext_resource type="Texture2D" uid="uid://c4rh3gfscrot1" path="res://art/run/run_w_right/IMG_7179.PNG" id="18_htajk"]
 [ext_resource type="Texture2D" uid="uid://cjlj1lupxtaxt" path="res://art/run/death/IMG_7189.PNG" id="18_t65mb"]
 [ext_resource type="Texture2D" uid="uid://c613grfom2tc0" path="res://art/run/run_w_right/IMG_7180.PNG" id="19_cdkcq"]
@@ -100,7 +95,7 @@ animations = [{
 "texture": ExtResource("12_pjej8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_o28u2")
+"texture": null
 }],
 "loop": true,
 "name": &"run_rainbow_right",
@@ -108,16 +103,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("14_6vp6x")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_vdaxv")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_x1uuy")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_j8fyn")
+"texture": null
 }],
 "loop": true,
 "name": &"run_white_left",
@@ -211,6 +206,7 @@ text = "Score: "
 stream = ExtResource("7_ldx33")
 
 [node name="BoostPickupSound" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource("9_peqk7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

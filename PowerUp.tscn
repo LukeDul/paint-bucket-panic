@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://blrk0g15i040j"]
+[gd_scene load_steps=9 format=3 uid="uid://btqhk1571u6k3"]
 
+[ext_resource type="Texture2D" uid="uid://bsmfcgm8lqyw0" path="res://art/run/IMG_7198.PNG" id="1_h8f4d"]
 [ext_resource type="AudioStream" uid="uid://cltcvdk4s2rb4" path="res://splat-305791.mp3" id="1_n1tsu"]
+[ext_resource type="Texture2D" uid="uid://d0ynhp0otlp7j" path="res://art/run/IMG_7199.PNG" id="2_75mkc"]
+[ext_resource type="Texture2D" uid="uid://qcs8yc5s1sk1" path="res://art/run/IMG_7200.PNG" id="3_vrti8"]
 
 [sub_resource type="GDScript" id="GDScript_jplby"]
 script/source = "extends Area2D
@@ -39,23 +42,62 @@ func apply_jump_boost(player):
 	)
 	
 	timer.start()
+	
+	# Show power-up message
+
+
+func _on_boost_pickup_sound_finished() -> void:
+	pass # Replace with function body.
 "
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1oc7b"]
-radius = 6.0
+[sub_resource type="SpriteFrames" id="SpriteFrames_3050c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_h8f4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_75mkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vrti8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_75mkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_h8f4d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1c4cq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1oc7b"]
+radius = 4.0
 
 [node name="PowerUp" type="Area2D"]
 script = SubResource("GDScript_jplby")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_1oc7b")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.009, 0.011)
+sprite_frames = SubResource("SpriteFrames_3050c")
+autoplay = "default"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-2.38419e-07, 0)
 scale = Vector2(10.25, 11.5)
 texture = SubResource("PlaceholderTexture2D_1c4cq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1oc7b")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1oc7b")
 
 [node name="BoostPickupSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_n1tsu")
