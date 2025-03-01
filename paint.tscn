@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdf1k46l3hhsx"]
+[gd_scene load_steps=14 format=3 uid="uid://b8ml5rwfn7v18"]
 
 [ext_resource type="Script" path="res://paint.gd" id="1_1i43e"]
 [ext_resource type="Texture2D" uid="uid://ih1bxanvjje3" path="res://art/paint/paint_color.png" id="2_euv3v"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://12y13pimbky" path="res://art/paint/IMG_7160.PNG" id="7_lbrs7"]
 [ext_resource type="Texture2D" uid="uid://dntextqp6rss8" path="res://art/paint/IMG_7162.PNG" id="8_ggw3n"]
 [ext_resource type="Texture2D" uid="uid://bu3i3dn4tt2b3" path="res://art/paint/IMG_7163.PNG" id="9_77noc"]
+[ext_resource type="AudioStream" uid="uid://cltcvdk4s2rb4" path="res://splat-305791.mp3" id="11_055w3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bj3hl"]
 animations = [{
@@ -62,5 +63,8 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.992902, 1.07602)
 shape = SubResource("RectangleShape2D_tok2c")
+
+[node name="SplatSoundEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_055w3")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

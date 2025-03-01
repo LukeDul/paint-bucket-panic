@@ -31,10 +31,11 @@ func _physics_process(delta: float) -> void:
 
 # Add this method
 func apply_jump_boost(amount, duration):
+	$SplatSoundEffect.play()
 	print("Jump boost applied: ", amount, " for ", duration, " seconds")
 	jump_boost_multiplier = amount
 	modulate = Color(0.5, 1.0, 0.5)  # Green glow effect
-	
+
 	# Create a timer to reset the boost after duration
 	var timer = Timer.new()
 	add_child(timer)
@@ -47,3 +48,5 @@ func apply_jump_boost(amount, duration):
 		timer.queue_free()
 	)
 	timer.start()
+	
+	

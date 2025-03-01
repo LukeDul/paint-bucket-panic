@@ -28,7 +28,7 @@ func _physics_process(delta):
 
 func apply_power_up(player):
 	print("Applying power-up to player")
-	
+
 	# Apply jump boost
 	player.jump_boost_multiplier = jump_boost_amount
 	player.modulate = Color(0.5, 1.0, 0.5)  # Green glow
