@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlt4bb67pg2y7"]
+[gd_scene load_steps=6 format=3 uid="uid://c6l5g61xoaxy6"]
 
 [ext_resource type="Script" path="res://luke_main.gd" id="1_6ohd6"]
-[ext_resource type="PackedScene" uid="uid://cfubijkoyneou" path="res://static platform.tscn" id="1_21gqy"]
+[ext_resource type="PackedScene" uid="uid://b0grnjrwowxca" path="res://static platform.tscn" id="1_21gqy"]
 [ext_resource type="PackedScene" uid="uid://g5efcmj1tnd1" path="res://player.tscn" id="1_oj63w"]
-[ext_resource type="PackedScene" uid="uid://bdf1k46l3hhsx" path="res://paint.tscn" id="3_el7vu"]
+[ext_resource type="PackedScene" uid="uid://b8ml5rwfn7v18" path="res://paint.tscn" id="3_el7vu"]
+[ext_resource type="PackedScene" uid="uid://b21ihukhnw1pc" path="res://Score.tscn" id="5_pa6ch"]
 
 [node name="LukeMain" type="Node2D"]
 script = ExtResource("1_6ohd6")
@@ -39,3 +40,5 @@ position = Vector2(-1, -78)
 position = Vector2(0, -33)
 
 [node name="Paint" parent="." instance=ExtResource("3_el7vu")]
+
+[node name="Node2D" parent="." instance=ExtResource("5_pa6ch")]

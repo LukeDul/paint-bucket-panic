@@ -1,14 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4jle5peysaeb"]
+[gd_scene load_steps=3 format=3 uid="uid://b4jle5peysaeb"]
 
 [ext_resource type="PackedScene" uid="uid://g5efcmj1tnd1" path="res://player.tscn" id="1_cbm14"]
-[ext_resource type="PackedScene" uid="uid://cdncp5cc6sccq" path="res://paintscene.tscn" id="2_tmdou"]
 [ext_resource type="Script" path="res://paintscene.gd" id="3_ifb4c"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_cbm14")]
 
-[node name="Paintscene" parent="." instance=ExtResource("2_tmdou")]
+[node name="Paintscene" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 script = ExtResource("3_ifb4c")
 initial_speed = null
 acceleration = null
