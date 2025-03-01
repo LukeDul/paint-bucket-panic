@@ -13,8 +13,9 @@ func _ready():
 	pass
 
 func _on_body_entered(body):
-	if body.is_in_group(\"player\"):  # Make sure your player is in this group
+	if body.name == 'Player':  # Make sure your player is in this group
 		# Apply jump boost to player
+		print(\"i ran into the power up lol\")
 		apply_jump_boost(body)
 		
 		# Hide the power-up visually
@@ -49,7 +50,7 @@ func apply_jump_boost(player):
 		# Remove visual indicator
 		player.modulate = Color(1, 1, 1)
 		# Show power-up expiry message
-		player.show_message(\"Jump boost expired!\")
+	
 		# Remove timer
 		timer.queue_free()
 	)
@@ -58,7 +59,6 @@ func apply_jump_boost(player):
 	timer.start()
 	
 	# Show power-up message
-	player.show_message(\"Jump boost activated!\")
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1oc7b"]
@@ -76,3 +76,5 @@ shape = SubResource("CircleShape2D_1oc7b")
 position = Vector2(-2.38419e-07, 0)
 scale = Vector2(10.25, 11.5)
 texture = SubResource("PlaceholderTexture2D_1c4cq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

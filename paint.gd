@@ -1,7 +1,7 @@
 extends Area2D
 var initial_speed = 3.0        # Increased starting speed (was 1.0)
 var acceleration = 3.0        # Increased acceleration rate (was 1.0)
-var max_speed = 40.0        # Increased maximum speed (was 20.0)
+var max_speed = 36.0        # Increased maximum speed (was 20.0)
 var current_speed = 0.0
 var paint_height = 20.0        # Current height in pixels (grows upward)
 var distance_multiplier = 0.0  # Additional speed based on distance from player
