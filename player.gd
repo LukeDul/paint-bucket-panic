@@ -1,13 +1,14 @@
 extends CharacterBody2D
-
 const SPEED = 50.0
 const JUMP_VELOCITY = -200.0
 var jump_boost_multiplier = 1.0
-@export var max_y: int 
+@export var max_y: int
 @onready var score = $Camera2D/Label
 @onready var animated_sprite = $AnimatedSprite2D
-
 var jumpingflag = false
+var previous_score_milestone = 0  # Track the last milestone we passed
+
+
 # Remove var flag = false (no longer needed)
 
 func _ready():
@@ -15,11 +16,35 @@ func _ready():
 
 func _process(delta: float):
 	if position.y < max_y: max_y = position.y
-	score.text = "Score: %s" % (abs(max_y) - 33)
 	
-	# Use jump_boost_multiplier to determine animation state
+	# Calculate current score
+	var current_score = abs(max_y) - 33
+	score.text = "Score: %s" % current_score
+	
+	# Check for milestone (every 1000 points)
+	var current_milestone = int(current_score / 1000)
+	if current_milestone > previous_score_milestone:
+		# Milestone reached!
+		milestone_reached()
+		previous_score_milestone = current_milestone
 
-
+func milestone_reached():
+	# Play sound effect
+	$AudioStreamPlayer2DMilestone.play()  # Create this node if it doesn't exist
+	
+	# Change text color to yellow
+	score.add_theme_color_override("font_color", Color(1, 1, 0))  # Yellow
+	
+	# Create a timer to reset the text color
+	var timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = 1.0  # Show yellow for 1 second
+	timer.one_shot = true
+	timer.timeout.connect(func():
+		score.add_theme_color_override("font_color", Color(1, 1, 1))  # Back to white
+		timer.queue_free()
+	)
+	timer.start()
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
