@@ -5,13 +5,19 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3wj17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85o0i"]
+size = Vector2(2, 2)
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(4, 4)
 script = ExtResource("1_j8pl8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(20, 20)
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(2, 2)
 texture = SubResource("PlaceholderTexture2D_3wj17")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_85o0i")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(8, 8)
