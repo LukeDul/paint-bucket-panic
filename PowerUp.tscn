@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://btqhk1571u6k3"]
+[gd_scene load_steps=5 format=3 uid="uid://blrk0g15i040j"]
 
 [ext_resource type="AudioStream" uid="uid://cltcvdk4s2rb4" path="res://splat-305791.mp3" id="1_n1tsu"]
 
@@ -30,7 +30,7 @@ func _on_body_entered(body):
 func apply_jump_boost(player):
 	# Store original jump multiplier
 	var original_multiplier = player.jump_boost_multiplier
-	
+
 	# Apply the boost
 	player.jump_boost_multiplier = jump_boost_amount
 	
