@@ -10,12 +10,7 @@ var paint_height = 100.0          # Current height in pixels (grows upward)
 
 func _ready():
 	current_speed = initial_speed
-	# Ensure the signal is connected and working
-	if not is_connected("body_entered", _on_body_entered):
-		var error = connect("body_entered", _on_body_entered)
-		if error != OK:
-			print("Failed to connect body_entered signal: ", error)
-	print("Paint ready, signal connected: ", is_connected("body_entered", _on_body_entered))
+	
 	# Set initial sizes and positions
 	collision_shape.shape.extents.y = paint_height / 2
 	sprite.scale.y = paint_height / sprite.texture.get_height()  # Scale to 100px height
@@ -38,8 +33,10 @@ func _process(delta):
 		paint_height = 1080
 		current_speed = 0  # Stop growing when full
 
-func _on_body_entered(body: Node3D) -> void:
+
+
+func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	print("Body entered paint: ", body.name, ", Type: ", body.get_class(), ", In 'player' group: ", body.is_in_group("player"))
-	if body.is_in_group("player"):
+	if body.name == 'Player':
 		print("Game Over! Paint caught the player.")
 		get_tree().reload_current_scene()

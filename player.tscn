@@ -1,22 +1,59 @@
-[gd_scene load_steps=4 format=3 uid="uid://g5efcmj1tnd1"]
+[gd_scene load_steps=9 format=3 uid="uid://g5efcmj1tnd1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_j8pl8"]
-[ext_resource type="Texture2D" uid="uid://8lirg6s2w6ap" path="res://Photo on 2-28-25 at 9.14 PM.jpg" id="2_ebp16"]
+[ext_resource type="Texture2D" uid="uid://bjbsr3764ncvd" path="res://art/IMG_7142.PNG" id="2_2oopr"]
+[ext_resource type="Texture2D" uid="uid://8lirg6s2w6ap" path="res://art/Photo on 2-28-25 at 9.14 PM.jpg" id="2_ebp16"]
+[ext_resource type="Texture2D" uid="uid://b6j4lyo6qu54r" path="res://art/IMG_7143.PNG" id="3_bk5af"]
+[ext_resource type="Texture2D" uid="uid://bgt64vqkdqy85" path="res://art/IMG_7144.PNG" id="4_o8jdk"]
+[ext_resource type="Texture2D" uid="uid://dts5m8o5qgqxq" path="res://art/IMG_7145.PNG" id="5_4sqhu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_85o0i"]
-size = Vector2(2, 2)
+[sub_resource type="SpriteFrames" id="SpriteFrames_235x5"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2oopr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bk5af")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o8jdk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4sqhu")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hjyuo"]
+radius = 0.75
+height = 3.0
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_j8pl8")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.00159373, 0.00208333)
+sprite_frames = SubResource("SpriteFrames_235x5")
+animation = &"run"
+autoplay = "run"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(4.76837e-07, -2.38419e-07)
 scale = Vector2(0.00138889, 0.00208333)
 texture = ExtResource("2_ebp16")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_85o0i")
+shape = SubResource("CapsuleShape2D_hjyuo")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(8, 8)
+zoom = Vector2(18, 18)

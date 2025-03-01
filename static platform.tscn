@@ -1,16 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0grnjrwowxca"]
+[gd_scene load_steps=3 format=3 uid="uid://cfubijkoyneou"]
 
-[ext_resource type="Texture2D" uid="uid://cn72k00jc0oit" path="res://brand.jpg" id="1_t37e7"]
+[ext_resource type="Texture2D" uid="uid://cn72k00jc0oit" path="res://art/brand.jpg" id="1_t37e7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of1mu"]
 size = Vector2(248, 46)
 
 [node name="StaticPlatform" type="StaticBody2D"]
 scale = Vector2(0.0199683, 0.02)
+constant_linear_velocity = Vector2(0, -5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.247375, -0.442345)
-scale = Vector2(-0.171937, 0.0469727)
+rotation = -3.14159
+scale = Vector2(0.171937, -0.0469727)
 texture = ExtResource("1_t37e7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
