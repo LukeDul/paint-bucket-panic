@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://chmt23shwnsl0"]
+[gd_scene load_steps=4 format=3 uid="uid://chmt23shwnsl0"]
 
 [ext_resource type="Script" path="res://death_screen.gd" id="1_7cphj"]
+[ext_resource type="Texture2D" uid="uid://bxv5qyoj4s7ta" path="res://art/Untitled_Artwork 2.png" id="2_lvcf1"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qvwmp"]
 
@@ -11,13 +12,16 @@ script = ExtResource("1_7cphj")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 96.0
-offset_top = 64.0
-offset_right = 97.0
-offset_bottom = 65.0
-scale = Vector2(260.737, 59.3951)
+offset_left = 104.0
+offset_top = 344.0
+offset_right = 106.0
+offset_bottom = 347.0
+scale = Vector2(323.266, 61.3278)
 texture_normal = SubResource("PlaceholderTexture2D_qvwmp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 539.5)
+scale = Vector2(0.863309, 0.648081)
+texture = ExtResource("2_lvcf1")
 
 [connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
