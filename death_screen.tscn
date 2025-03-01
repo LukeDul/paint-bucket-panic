@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://chmt23shwnsl0"]
+
+[ext_resource type="Script" path="res://death_screen.gd" id="1_7cphj"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qvwmp"]
+
+[node name="DeathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7cphj")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(260.737, 59.3951)
+texture_normal = SubResource("PlaceholderTexture2D_qvwmp")
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]

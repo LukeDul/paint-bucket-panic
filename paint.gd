@@ -58,4 +58,4 @@ func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, 
 	if body.name == 'Player':
 		print("Game Over! Paint caught the player.")
 
-		get_tree().reload_current_scene()
+		get_tree().change_scene_to_file("res://death_screen.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b8ml5rwfn7v18"]
+[gd_scene load_steps=14 format=3 uid="uid://bdf1k46l3hhsx"]
 
 [ext_resource type="Script" path="res://paint.gd" id="1_1i43e"]
 [ext_resource type="Texture2D" uid="uid://ih1bxanvjje3" path="res://art/paint/paint_color.png" id="2_euv3v"]
@@ -45,7 +45,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tok2c"]
-size = Vector2(120, 20)
+size = Vector2(120, 20.2229)
 
 [node name="Paint" type="Area2D"]
 script = ExtResource("1_1i43e")
@@ -55,12 +55,13 @@ scale = Vector2(3.75605, -0.625687)
 texture = ExtResource("2_euv3v")
 
 [node name="PaintFace" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -6)
-scale = Vector2(0.0149683, 0.0150613)
+position = Vector2(0, -7)
+scale = Vector2(0.0146761, 0.0124118)
 sprite_frames = SubResource("SpriteFrames_bj3hl")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.1199)
 scale = Vector2(0.992902, 1.07602)
 shape = SubResource("RectangleShape2D_tok2c")
 
