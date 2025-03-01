@@ -9,7 +9,7 @@ func _ready() -> void:
 	last_height = player.position.y
 	random_step = calc_random_step()
 	PhysicsServer2D.set_active(true)
-	$AudioStreamPlayer2D.play()	
+	$AudioStreamPlayer2DMusic.play()	
 func calc_random_step()->int: return randi_range(10, 20) 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

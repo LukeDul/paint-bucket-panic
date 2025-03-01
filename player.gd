@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 				animated_sprite.play("idle_color")
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY * jump_boost_multiplier
-		$AudioStreamPlayer2D.play()
+		$AudioStreamPlayer2DJumper.play()
 		#jumpingflag = true
 
 	
