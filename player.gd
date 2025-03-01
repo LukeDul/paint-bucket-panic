@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 50.0
 const JUMP_VELOCITY = -200.0
 @export var max_y: int 
+@onready var score = $Label
 
 func _ready():
 	max_y = position.y
@@ -11,6 +12,7 @@ func _ready():
 	
 func _process(delta: float):
 	if position.y < max_y: max_y = position.y
+	score.text = "Score: %s" % max_y
 
 
 func _physics_process(delta: float) -> void:
