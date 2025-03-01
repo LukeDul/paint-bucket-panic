@@ -9,8 +9,8 @@ anchors_preset = 0
 script = ExtResource("1_q06xg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(962.032, 539.501)
-scale = Vector2(0.861482, 0.648081)
+position = Vector2(960, 536)
+scale = Vector2(0.863309, 0.652278)
 texture = ExtResource("2_xq3ev")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -21,9 +21,9 @@ expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 1160.0
+offset_left = 1152.0
 offset_top = 368.0
-offset_right = 1166.0
+offset_right = 1158.0
 offset_bottom = 375.0
 scale = Vector2(-67.7779, 17.5929)
 
