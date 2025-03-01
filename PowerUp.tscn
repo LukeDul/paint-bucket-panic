@@ -5,13 +5,11 @@
 [sub_resource type="GDScript" id="GDScript_jplby"]
 script/source = "extends Area2D
 
-@export var jump_boost_amount = 1.5  # Multiplier for jump height (1.5x normal)
-@export var boost_duration = 5.0     # How long the power-up lasts in seconds
-@export var spawn_chance = 0.05      # 5% chance to spawn per platform
+@export var jump_boost_amount = 1.5
+@export var boost_duration = 5.0
+@export var spawn_chance = 0.05
 
 func _ready():
-	# Set up any initial appearance
-	# If you have an AnimationPlayer, you can start animations here
 	pass
 
 func _on_body_entered(body):
@@ -23,45 +21,24 @@ func _on_body_entered(body):
 		visible = false
 		$CollisionShape2D.set_deferred(\"disabled\", true)
 		
-		# Wait longer (e.g., 2 seconds) to match your audio duration
 		await get_tree().create_timer(2.0).timeout
 		queue_free()
 
 func apply_jump_boost(player):
-	# Store original jump multiplier
 	var original_multiplier = player.jump_boost_multiplier
-
-	# Apply the boost
 	player.jump_boost_multiplier = jump_boost_amount
 	
-	# Create visual indicator on player (optional)
-	player.modulate = Color(0.5, 1.0, 0.5)  # Greenish glow
-	
-	# Create a timer to reset the jump height
 	var timer = Timer.new()
 	player.add_child(timer)
 	timer.wait_time = boost_duration
 	timer.one_shot = true
 	
-	# Connect the timer to reset the jump boost
 	timer.timeout.connect(func():
 		player.jump_boost_multiplier = original_multiplier
-		# Remove visual indicator
-		player.modulate = Color(1, 1, 1)
-		# Show power-up expiry message
-	
-		# Remove timer
 		timer.queue_free()
 	)
 	
-	# Start the timer
 	timer.start()
-	
-	# Show power-up message
-
-
-func _on_boost_pickup_sound_finished() -> void:
-	pass # Replace with function body.
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1oc7b"]

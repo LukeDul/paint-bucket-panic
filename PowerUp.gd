@@ -31,7 +31,7 @@ func apply_power_up(player):
 
 	# Apply jump boost
 	player.jump_boost_multiplier = jump_boost_amount
-	player.modulate = Color(0.5, 1.0, 0.5)  # Green glow
+	
 	
 	# Create a timer to reset
 	var timer = Timer.new()
@@ -40,7 +40,7 @@ func apply_power_up(player):
 	timer.one_shot = true
 	timer.timeout.connect(func():
 		player.jump_boost_multiplier = 1.0
-		player.modulate = Color(1, 1, 1)  # Normal color
+
 		print("Jump boost expired")
 		timer.queue_free()
 	)
