@@ -36,7 +36,6 @@ func _process(delta):
 
 
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	print("Body entered paint: ", body.name, ", Type: ", body.get_class(), ", In 'player' group: ", body.is_in_group("player"))
 	if body.name == 'Player':
 		print("Game Over! Paint caught the player.")
 		get_tree().reload_current_scene()
