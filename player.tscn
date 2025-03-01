@@ -103,7 +103,7 @@ animations = [{
 "texture": ExtResource("13_o28u2")
 }],
 "loop": true,
-"name": &"run_rainbow",
+"name": &"run_rainbow_right",
 "speed": 10.0
 }, {
 "frames": [{
@@ -177,12 +177,12 @@ script = ExtResource("1_j8pl8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.00159373, 0.00208333)
 sprite_frames = SubResource("SpriteFrames_235x5")
-animation = &"run_white_left"
+animation = &"run_rainbow_right"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
 scale = Vector2(0.00159373, 0.00208333)
 sprite_frames = SubResource("SpriteFrames_235x5")
-animation = &"run_white_left"
+animation = &"run_rainbow_right"
 autoplay = "run_white_right"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

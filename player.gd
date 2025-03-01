@@ -19,13 +19,13 @@ func _process(delta: float):
 	if velocity.x > 0 and jump_boost_multiplier == 1.0:
 		animated_sprite.play("run_white_right")
 		animated_sprite.flip_h = false
-	elif velocity.x > 0 and jump_boost_multiplier > 1.0:
+	elif velocity.x > 0:
 		animated_sprite.play("run_rainbow_right")
 		animated_sprite.flip_h = false
 	elif velocity.x < 0 and jump_boost_multiplier == 1.0:
 		animated_sprite.play("run_white_right")
 		animated_sprite.flip_h = true
-	elif velocity.x < 0 and jump_boost_multiplier > 1.0:
+	elif velocity.x < 0:
 		animated_sprite.play("run_rainbow_right")
 		animated_sprite.flip_h = true
 	elif velocity.x == 0:
