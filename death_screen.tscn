@@ -18,4 +18,6 @@ offset_bottom = 65.0
 scale = Vector2(260.737, 59.3951)
 texture_normal = SubResource("PlaceholderTexture2D_qvwmp")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
 [connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
