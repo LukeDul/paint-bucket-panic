@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://g5efcmj1tnd1"]
+[gd_scene load_steps=10 format=3 uid="uid://g5efcmj1tnd1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_j8pl8"]
 [ext_resource type="Texture2D" uid="uid://bjbsr3764ncvd" path="res://art/IMG_7142.PNG" id="2_2oopr"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b6j4lyo6qu54r" path="res://art/IMG_7143.PNG" id="3_bk5af"]
 [ext_resource type="Texture2D" uid="uid://bgt64vqkdqy85" path="res://art/IMG_7144.PNG" id="4_o8jdk"]
 [ext_resource type="Texture2D" uid="uid://dts5m8o5qgqxq" path="res://art/IMG_7145.PNG" id="5_4sqhu"]
+[ext_resource type="AudioStream" uid="uid://wnwldt7ttn66" path="res://cartoon-jump-6462.mp3" id="7_ldx33"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_235x5"]
 animations = [{
@@ -57,3 +58,6 @@ shape = SubResource("CapsuleShape2D_hjyuo")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(18, 18)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ldx33")
