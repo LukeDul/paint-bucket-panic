@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b8ml5rwfn7v18"]
+[gd_scene load_steps=15 format=3 uid="uid://b8ml5rwfn7v18"]
 
 [ext_resource type="Script" path="res://paint.gd" id="1_1i43e"]
 [ext_resource type="Texture2D" uid="uid://ih1bxanvjje3" path="res://art/paint/paint_color.png" id="2_euv3v"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c3y8ulaaga2gc" path="res://art/paint/IMG_7207.PNG" id="9_t1f4s"]
 [ext_resource type="Texture2D" uid="uid://cqh1to1p0vt6u" path="res://art/paint/IMG_7208.PNG" id="10_pmb01"]
 [ext_resource type="AudioStream" uid="uid://cltcvdk4s2rb4" path="res://splat-305791.mp3" id="11_055w3"]
+[ext_resource type="AudioStream" uid="uid://dw3i0akbvd0ci" path="res://zombie-sounds-95180.mp3" id="12_ahbab"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bj3hl"]
 animations = [{
@@ -75,5 +76,9 @@ polygon = PackedVector2Array(0, -11.5612, 8.05719, -8.77313, 16.1144, -8.77313, 
 
 [node name="SplatSoundEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_055w3")
+
+[node name="AudioStreamPlayer2DBlurbNoise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_ahbab")
+volume_db = 3.634
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
