@@ -7,7 +7,7 @@ var paint_height = 20.0        # Current height in pixels (grows upward)
 var distance_multiplier = 0.0  # Additional speed based on distance from player
 @onready var sprite = $Sprite2D
 @onready var face = $PaintFace
-@onready var collision_shape = $CollisionShape2D
+@onready var collision_shape = $CollisionPolygon2D
 @onready var player = null     # Will store reference to player
 
 # only start moving once the player starts moving?
@@ -15,10 +15,10 @@ func _ready():
 	current_speed = initial_speed
 	
 	# Set initial sizes and positions
-	collision_shape.shape.extents.y = paint_height / 2
-	sprite.scale.y = paint_height / sprite.texture.get_height()  # Scale to initial height
-	collision_shape.position.y = -paint_height / 2  
-	sprite.position.y = -paint_height / 2
+	#collision_shape.shape.extents.y = paint_height / 2
+	#sprite.scale.y = paint_height / sprite.texture.get_height()  # Scale to initial height
+	#collision_shape.position.y = -paint_height / 2  
+	#sprite.position.y = -paint_height / 2
 	
 	# Get reference to player
 	player = get_node("/root/Main/Player")  # Adjust this path to match your scene structure
@@ -46,16 +46,15 @@ func _process(delta):
 	paint_height += frame_speed * delta
 	
 	# Update collision shape
-	collision_shape.shape.extents.y = paint_height / 2
-	collision_shape.position.y = -paint_height / 2  # Keep bottom anchored
+	#collision_shape.shape.extents.y = -2*paint_height
+	#collision_shape.position.y = -paint_height / 2  # Keep bottom anchored
 	
 	# Update sprite
 	sprite.scale.y = paint_height / sprite.texture.get_height()  # Stretch vertically
 	sprite.position.y = -paint_height / 2  # Keep bottom anchored
 	face.position.y = -paint_height
+	collision_shape.position.y = face.position.y -4
 	
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body.name == 'Player':
-		print("Game Over! Paint caught the player.")
-
 		get_tree().change_scene_to_file("res://death_screen.tscn")

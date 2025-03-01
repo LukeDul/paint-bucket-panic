@@ -11,10 +11,10 @@ script = ExtResource("1_7cphj")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 24.0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = 96.0
+offset_top = 64.0
+offset_right = 97.0
+offset_bottom = 65.0
 scale = Vector2(260.737, 59.3951)
 texture_normal = SubResource("PlaceholderTexture2D_qvwmp")
 

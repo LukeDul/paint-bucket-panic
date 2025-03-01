@@ -244,7 +244,7 @@ texture = ExtResource("2_ebp16")
 shape = SubResource("CapsuleShape2D_hjyuo")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(18, 18)
+zoom = Vector2(17, 17)
 limit_smoothed = true
 script = ExtResource("7_xcw6g")
 

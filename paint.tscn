@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b8ml5rwfn7v18"]
+[gd_scene load_steps=14 format=3 uid="uid://bdf1k46l3hhsx"]
 
 [ext_resource type="Script" path="res://paint.gd" id="1_1i43e"]
 [ext_resource type="Texture2D" uid="uid://ih1bxanvjje3" path="res://art/paint/paint_color.png" id="2_euv3v"]
@@ -48,6 +48,7 @@ animations = [{
 size = Vector2(120, 21.2637)
 
 [node name="Paint" type="Area2D"]
+top_level = true
 script = ExtResource("1_1i43e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -61,9 +62,16 @@ sprite_frames = SubResource("SpriteFrames_bj3hl")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -0.559938)
 scale = Vector2(0.992902, 1.07602)
 shape = SubResource("RectangleShape2D_tok2c")
+disabled = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -7)
+scale = Vector2(0.992902, 1.07602)
+polygon = PackedVector2Array(0, -11.5612, 8.05719, -8.77313, 16.1144, -8.77313, 19.1358, -10.6318, 21.1501, -10.6318, 26.1859, -9.70248, 31.2216, -10.6318, 36.2574, -12.4905, 46.3288, -10.6318, 59.4218, -11.5612, 57.4075, 7.95518, -59.4218, 7.95518, -59.4218, -8.77313, -50.3574, -11.5612, -40.2859, -13.4199, -29.2073, -8.77313, -22.1573, -9.70248, -15.1072, -12.4905, -12.0858, -12.4905, -8.05719, -9.70248, -5.03574, -9.70248)
 
 [node name="SplatSoundEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_055w3")
