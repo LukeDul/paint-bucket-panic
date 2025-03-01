@@ -28,9 +28,16 @@ func _process(delta: float) -> void:
 	
 	
 func _gen_new_platforms(x: int, y: int) -> void:
-	var scene = load("res://static platform.tscn")  # Load the scene at runtime
-	var instance = scene.instantiate()  # Create an instance of the scene
+	var platform_type = randi() % 2  # Randomly choose 0 or 1
+	var scene_path = ""
+	
+	if platform_type == 0:
+		scene_path = "res://static platform.tscn"
+	else:
+		scene_path = "res://moving_platform.tscn"
+	
+	var scene = load(scene_path)  # Load the selected scene
+	var instance = scene.instantiate()  # Create an instance
 	instance.position = Vector2(x, y)  # Set the position
 	add_child(instance)  # Add it to the current node
-	pass
 	
