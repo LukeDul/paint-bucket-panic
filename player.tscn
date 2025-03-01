@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://g5efcmj1tnd1"]
+[gd_scene load_steps=39 format=3 uid="uid://g5efcmj1tnd1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_j8pl8"]
 [ext_resource type="Texture2D" uid="uid://bjbsr3764ncvd" path="res://art/IMG_7142.PNG" id="2_2oopr"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://drft1fgku0nu1" path="res://art/newj/IMG_7278.PNG" id="31_g1w32"]
 [ext_resource type="Texture2D" uid="uid://w7k4i826ri48" path="res://art/newj/IMG_7280.PNG" id="32_xoowd"]
 [ext_resource type="Texture2D" uid="uid://k67w7b3ykmdl" path="res://art/newj/IMG_7282.PNG" id="33_p8h1y"]
+[ext_resource type="AudioStream" uid="uid://cq787voihdvv8" path="res://cash-register-purchase-87313.mp3" id="39_yl48q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_235x5"]
 animations = [{
@@ -262,3 +263,6 @@ stream = ExtResource("9_peqk7")
 libraries = {
 "": SubResource("AnimationLibrary_c6kmw")
 }
+
+[node name="AudioStreamPlayer2DMilestone" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("39_yl48q")

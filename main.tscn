@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b4jle5peysaeb"]
+[gd_scene load_steps=24 format=3 uid="uid://b4jle5peysaeb"]
 
 [ext_resource type="PackedScene" uid="uid://g5efcmj1tnd1" path="res://player.tscn" id="1_cbm14"]
 [ext_resource type="Texture2D" uid="uid://cvoevr3or8ocr" path="res://art/run/idle_color.PNG" id="2_xbjur"]
@@ -14,11 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://1ilami7aieaj" path="res://art/run/run_right_clr/IMG_7183.PNG" id="12_xl61y"]
 [ext_resource type="Texture2D" uid="uid://bnyavu2daahxd" path="res://art/run/run_right_clr/IMG_7184.PNG" id="13_mawjs"]
 [ext_resource type="Texture2D" uid="uid://bplwews3l5ikk" path="res://art/run/run_right_clr/IMG_7185.PNG" id="14_vho5e"]
-[ext_resource type="Texture2D" path="res://art/run/IMG_7186.PNG" id="15_tb8sy"]
-[ext_resource type="Texture2D" path="res://art/run/IMG_7179.PNG" id="16_j0as6"]
-[ext_resource type="Texture2D" path="res://art/run/IMG_7180.PNG" id="17_5x36b"]
-[ext_resource type="Texture2D" path="res://art/run/IMG_7181.PNG" id="18_fhnck"]
-[ext_resource type="Texture2D" path="res://art/run/IMG_7182.PNG" id="19_5qb4s"]
 [ext_resource type="Texture2D" uid="uid://c4rh3gfscrot1" path="res://art/run/run_w_right/IMG_7179.PNG" id="20_5or2x"]
 [ext_resource type="Texture2D" uid="uid://c613grfom2tc0" path="res://art/run/run_w_right/IMG_7180.PNG" id="21_bccqb"]
 [ext_resource type="Texture2D" uid="uid://cl3nmwg4pnu13" path="res://art/run/run_w_right/IMG_7181.PNG" id="22_e0too"]
@@ -96,7 +91,7 @@ animations = [{
 "texture": ExtResource("14_vho5e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_tb8sy")
+"texture": null
 }],
 "loop": true,
 "name": &"run_rainbow",
@@ -104,16 +99,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_j0as6")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_5x36b")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_fhnck")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_5qb4s")
+"texture": null
 }],
 "loop": true,
 "name": &"run_white_left",
