@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cdncp5cc6sccq"]
+
+[node name="Paintscene" type="Area2D"]
