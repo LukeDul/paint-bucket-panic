@@ -1,8 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://g5efcmj1tnd1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_j8pl8"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3wj17"]
+[ext_resource type="Texture2D" uid="uid://8lirg6s2w6ap" path="res://Photo on 2-28-25 at 9.14 PM.jpg" id="2_ebp16"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85o0i"]
 size = Vector2(2, 2)
@@ -12,9 +11,9 @@ scale = Vector2(4, 4)
 script = ExtResource("1_j8pl8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-4.76837e-07, 0)
-scale = Vector2(2, 2)
-texture = SubResource("PlaceholderTexture2D_3wj17")
+position = Vector2(4.76837e-07, -2.38419e-07)
+scale = Vector2(0.00138889, 0.00208333)
+texture = ExtResource("2_ebp16")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_85o0i")

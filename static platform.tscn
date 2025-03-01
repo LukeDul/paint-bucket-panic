@@ -1,16 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0grnjrwowxca"]
+[gd_scene load_steps=3 format=3 uid="uid://cfubijkoyneou"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cjggl"]
+[ext_resource type="Texture2D" uid="uid://cn72k00jc0oit" path="res://brand.jpg" id="1_t37e7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of1mu"]
 size = Vector2(248, 46)
 
 [node name="StaticPlatform" type="StaticBody2D"]
+scale = Vector2(0.0199683, 0.02)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.19209e-07, 0)
-scale = Vector2(-248.078, 46.0545)
-texture = SubResource("PlaceholderTexture2D_cjggl")
+position = Vector2(0.247375, -0.442345)
+scale = Vector2(-0.171937, 0.0469727)
+texture = ExtResource("1_t37e7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_of1mu")
