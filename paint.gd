@@ -2,7 +2,7 @@ extends Area2D
 
 @export var initial_speed = 50.0  # Starting height increase rate (pixels per second, upward)
 @export var acceleration = 10.0   # Rate increase per second
-@export var max_speed = 200.0     # Max height increase rate
+@export var max_speed = 25.0     # Max height increase rate
 var current_speed = 0.0
 var paint_height = 100.0          # Current height in pixels (grows upward)
 @onready var sprite = $Sprite2D
@@ -10,28 +10,36 @@ var paint_height = 100.0          # Current height in pixels (grows upward)
 
 func _ready():
 	current_speed = initial_speed
-	connect("body_entered", _on_body_entered)
-	# Set initial sizes
+	# Ensure the signal is connected and working
+	if not is_connected("body_entered", _on_body_entered):
+		var error = connect("body_entered", _on_body_entered)
+		if error != OK:
+			print("Failed to connect body_entered signal: ", error)
+	print("Paint ready, signal connected: ", is_connected("body_entered", _on_body_entered))
+	# Set initial sizes and positions
 	collision_shape.shape.extents.y = paint_height / 2
-	sprite.scale.y = paint_height / sprite.texture.get_height()  # Scale to initial height (100px)
-	sprite.position.y = -paint_height / 2  # Bottom at y = 1080, top moves up
+	sprite.scale.y = paint_height / sprite.texture.get_height()  # Scale to 100px height
+	collision_shape.position.y = -paint_height / 2  # Bottom at y = 1080
+	sprite.position.y = -paint_height / 2  # Bottom at y = 1080
 
 func _process(delta):
 	# Accelerate the growth rate
 	current_speed = min(current_speed + acceleration * delta, max_speed)
-	# Increase paint height (positive height grows, but direction is upward)
+	# Increase paint height (grows upward)
 	paint_height += current_speed * delta
-	# Update collision shape (extents.y is half the height)
+	# Update collision shape
 	collision_shape.shape.extents.y = paint_height / 2
-	# Update sprite scale and position
-	sprite.scale.y = paint_height / sprite.texture.get_height()  # Stretch sprite vertically
-	sprite.position.y = -paint_height / 2  # Move top upward, keep bottom at 1080
+	collision_shape.position.y = -paint_height / 2  # Keep bottom anchored at y = 1080
+	# Update sprite
+	sprite.scale.y = paint_height / sprite.texture.get_height()  # Stretch vertically
+	sprite.position.y = -paint_height / 2  # Keep bottom anchored at y = 1080
 	# Cap height at screen size (1080px from bottom to top)
 	if paint_height >= 1080:
 		paint_height = 1080
 		current_speed = 0  # Stop growing when full
 
-func _on_body_entered(body):
+func _on_body_entered(body: Node3D) -> void:
+	print("Body entered paint: ", body.name, ", Type: ", body.get_class(), ", In 'player' group: ", body.is_in_group("player"))
 	if body.is_in_group("player"):
 		print("Game Over! Paint caught the player.")
 		get_tree().reload_current_scene()
