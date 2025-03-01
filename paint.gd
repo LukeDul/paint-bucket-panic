@@ -2,7 +2,7 @@ extends Area2D
 
 var initial_speed = 1.0  # Starting height increase rate (pixels per second, upward)
 var acceleration = 1.0   # Rate increase per second
-var max_speed = 10.0     # Max height increase rate
+var max_speed = 20.0     # Max height increase rate
 var current_speed = 0.0
 var paint_height = 20.0          # Current height in pixels (grows upward)
 @onready var sprite = $Sprite2D

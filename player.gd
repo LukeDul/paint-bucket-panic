@@ -3,6 +3,14 @@ extends CharacterBody2D
 
 const SPEED = 50.0
 const JUMP_VELOCITY = -200.0
+@export var max_y: int 
+
+func _ready():
+	max_y = position.y
+	
+	
+func _process(delta: float):
+	if position.y < max_y: max_y = position.y
 
 
 func _physics_process(delta: float) -> void:
