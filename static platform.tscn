@@ -3,19 +3,20 @@
 [ext_resource type="Texture2D" uid="uid://cn72k00jc0oit" path="res://art/brand.jpg" id="1_t37e7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of1mu"]
-size = Vector2(248, 46)
+size = Vector2(274.238, 73)
 
 [node name="StaticPlatform" type="StaticBody2D"]
 scale = Vector2(0.0199683, 0.02)
 constant_linear_velocity = Vector2(0, -5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.247375, -0.442345)
+position = Vector2(0, -8.9407e-08)
 rotation = -3.14159
-scale = Vector2(0.171937, -0.0469727)
+scale = Vector2(0.492105, -0.126213)
 texture = ExtResource("1_t37e7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1.52588e-05)
+position = Vector2(-9.53674e-07, 0)
+scale = Vector2(2.58209, 1.65375)
 shape = SubResource("RectangleShape2D_of1mu")
 one_way_collision = true
