@@ -1,8 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8ml5rwfn7v18"]
+[gd_scene load_steps=13 format=3 uid="uid://bdf1k46l3hhsx"]
 
 [ext_resource type="Script" path="res://paint.gd" id="1_1i43e"]
+[ext_resource type="Texture2D" uid="uid://ih1bxanvjje3" path="res://art/paint/paint_color.png" id="2_euv3v"]
+[ext_resource type="Texture2D" uid="uid://j5t46bvebxck" path="res://art/paint/IMG_7156.PNG" id="2_pilf0"]
+[ext_resource type="Texture2D" uid="uid://c0ibyyrlmql3w" path="res://art/paint/IMG_7157.PNG" id="3_1li6e"]
+[ext_resource type="Texture2D" uid="uid://bwun37c0w31l8" path="res://art/paint/IMG_7158.PNG" id="4_yvf23"]
+[ext_resource type="Texture2D" uid="uid://jckbao7g58wp" path="res://art/paint/IMG_7159 2.PNG" id="5_guc1k"]
+[ext_resource type="Texture2D" uid="uid://xnc8t1br4xik" path="res://art/paint/IMG_7159.PNG" id="6_eeacp"]
+[ext_resource type="Texture2D" uid="uid://12y13pimbky" path="res://art/paint/IMG_7160.PNG" id="7_lbrs7"]
+[ext_resource type="Texture2D" uid="uid://dntextqp6rss8" path="res://art/paint/IMG_7162.PNG" id="8_ggw3n"]
+[ext_resource type="Texture2D" uid="uid://bu3i3dn4tt2b3" path="res://art/paint/IMG_7163.PNG" id="9_77noc"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_w7p6d"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_bj3hl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pilf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1li6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yvf23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_guc1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_eeacp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lbrs7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ggw3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_77noc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tok2c"]
 size = Vector2(120, 20)
@@ -11,10 +50,17 @@ size = Vector2(120, 20)
 script = ExtResource("1_1i43e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(119.918, -20.0297)
-texture = SubResource("PlaceholderTexture2D_w7p6d")
+scale = Vector2(3.75605, -0.625687)
+texture = ExtResource("2_euv3v")
+
+[node name="PaintFace" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+scale = Vector2(0.0149683, 0.0150613)
+sprite_frames = SubResource("SpriteFrames_bj3hl")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.992902, 1.07602)
 shape = SubResource("RectangleShape2D_tok2c")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

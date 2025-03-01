@@ -6,6 +6,7 @@ var current_speed = 0.0
 var paint_height = 20.0        # Current height in pixels (grows upward)
 var distance_multiplier = 0.0  # Additional speed based on distance from player
 @onready var sprite = $Sprite2D
+@onready var face = $PaintFace
 @onready var collision_shape = $CollisionShape2D
 @onready var player = null     # Will store reference to player
 
@@ -35,7 +36,7 @@ func _process(delta):
 	else:
 		distance_multiplier = 1.0
 	
-	# Accelerate the growth rate
+	# Accelerate the growth rate	
 	current_speed = min(current_speed + acceleration * delta, max_speed)
 	
 	# Apply distance multiplier to the current frame's movement
@@ -51,6 +52,7 @@ func _process(delta):
 	# Update sprite
 	sprite.scale.y = paint_height / sprite.texture.get_height()  # Stretch vertically
 	sprite.position.y = -paint_height / 2  # Keep bottom anchored
+	face.position.y = -paint_height
 	
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body.name == 'Player':

@@ -3,14 +3,14 @@ const SPEED = 50.0
 const JUMP_VELOCITY = -200.0
 var jump_boost_multiplier = 1.0  # Add this line
 @export var max_y: int 
-@onready var score = $Label
+@onready var score = $Camera2D/Label
 
 func _ready():
 	max_y = position.y
 
 func _process(delta: float):
 	if position.y < max_y: max_y = position.y
-	score.text = "Score: %s" % max_y
+	score.text = "Score: %s" % (abs(max_y) - 33)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

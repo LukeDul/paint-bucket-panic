@@ -17,7 +17,6 @@ func _process(delta: float) -> void:
 	# gen random num [30-50] and store it
 	# store current height of player as last height 
 	# if our current height is the last height + rand
-	# print(player.max_y)
 	
 	
 	if player.position.y < last_height - random_step:
