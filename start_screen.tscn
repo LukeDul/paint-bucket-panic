@@ -1,20 +1,30 @@
 [gd_scene load_steps=3 format=3 uid="uid://8vddeddjtekd"]
 
 [ext_resource type="Script" path="res://start_screen.gd" id="1_q06xg"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mwjii"]
+[ext_resource type="Texture2D" uid="uid://dcqv7wplbfxwk" path="res://art/Untitled_Artwork.png" id="2_xq3ev"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_q06xg")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(962.032, 539.501)
+scale = Vector2(0.861482, 0.648081)
+texture = ExtResource("2_xq3ev")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_top = -64.0
+offset_right = 1912.0
+offset_bottom = 1208.0
+expand_mode = 1
+
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 72.0
-offset_top = 24.0
-offset_right = 73.0
-offset_bottom = 25.0
-scale = Vector2(-52.4371, 14.0289)
-texture_normal = SubResource("PlaceholderTexture2D_mwjii")
+layout_mode = 0
+offset_left = 1160.0
+offset_top = 368.0
+offset_right = 1166.0
+offset_bottom = 375.0
+scale = Vector2(-67.7779, 17.5929)
 
 [connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
