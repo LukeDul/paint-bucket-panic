@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://blrk0g15i040j"]
+
+[sub_resource type="GDScript" id="GDScript_jplby"]
+script/source = "extends Area2D
+
+@export var jump_boost_amount = 1.5  # Multiplier for jump height (1.5x normal)
+@export var boost_duration = 5.0     # How long the power-up lasts in seconds
+@export var spawn_chance = 0.05      # 5% chance to spawn per platform
+
+func _ready():
+	# Set up any initial appearance
+	# If you have an AnimationPlayer, you can start animations here
+	pass
+
+func _on_body_entered(body):
+	if body.is_in_group(\"player\"):  # Make sure your player is in this group
+		# Apply jump boost to player
+		apply_jump_boost(body)
+		
+		# Hide the power-up visually
+		visible = false
+		
+		# Disable collision
+		$CollisionShape2D.set_deferred(\"disabled\", true)
+		
+		# Queue free after a moment
+		await get_tree().create_timer(0.1).timeout
+		queue_free()
+
+func apply_jump_boost(player):
+	# Store original jump multiplier
+	var original_multiplier = player.jump_boost_multiplier
+	
+	# Apply the boost
+	player.jump_boost_multiplier = jump_boost_amount
+	
+	# Create visual indicator on player (optional)
+	player.modulate = Color(0.5, 1.0, 0.5)  # Greenish glow
+	
+	# Create a timer to reset the jump height
+	var timer = Timer.new()
+	player.add_child(timer)
+	timer.wait_time = boost_duration
+	timer.one_shot = true
+	
+	# Connect the timer to reset the jump boost
+	timer.timeout.connect(func():
+		player.jump_boost_multiplier = original_multiplier
+		# Remove visual indicator
+		player.modulate = Color(1, 1, 1)
+		# Show power-up expiry message
+		player.show_message(\"Jump boost expired!\")
+		# Remove timer
+		timer.queue_free()
+	)
+	
+	# Start the timer
+	timer.start()
+	
+	# Show power-up message
+	player.show_message(\"Jump boost activated!\")
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1oc7b"]
+radius = 6.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1c4cq"]
+
+[node name="PowerUp" type="Area2D"]
+script = SubResource("GDScript_jplby")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1oc7b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, 0)
+scale = Vector2(10.25, 11.5)
+texture = SubResource("PlaceholderTexture2D_1c4cq")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6l5g61xoaxy6"]
+[gd_scene load_steps=7 format=3 uid="uid://c6l5g61xoaxy6"]
 
 [ext_resource type="Script" path="res://luke_main.gd" id="1_6ohd6"]
 [ext_resource type="PackedScene" uid="uid://b0grnjrwowxca" path="res://static platform.tscn" id="1_21gqy"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b8ml5rwfn7v18" path="res://paint.tscn" id="3_el7vu"]
 [ext_resource type="PackedScene" uid="uid://b21ihukhnw1pc" path="res://Score.tscn" id="5_pa6ch"]
 [ext_resource type="PackedScene" uid="uid://jwbd0dmnabyc" path="res://moving_platform.tscn" id="6_xyvsf"]
-[ext_resource type="PackedScene" uid="uid://blrk0g15i040j" path="res://PowerUp.tscn" id="7_41hlf"]
 
 [node name="LukeMain" type="Node2D"]
 script = ExtResource("1_6ohd6")
@@ -46,5 +45,3 @@ position = Vector2(0, -33)
 [node name="Node2D" parent="." instance=ExtResource("5_pa6ch")]
 
 [node name="MovingPlatform" parent="." instance=ExtResource("6_xyvsf")]
-
-[node name="PowerUp" parent="." instance=ExtResource("7_41hlf")]

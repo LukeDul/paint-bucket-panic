@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cagh8yoq3kcjg"]
+[gd_scene load_steps=4 format=3 uid="uid://jwbd0dmnabyc"]
 
 [ext_resource type="Script" path="res://moving_platform.gd" id="1_14kc8"]
 [ext_resource type="Texture2D" uid="uid://bg42h1u1sney3" path="res://art/platforms/IMG_7151.PNG" id="2_dacl4"]
