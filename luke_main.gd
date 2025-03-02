@@ -15,7 +15,7 @@ func calc_random_step()->int: return randi_range(10, 20)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if player.position.y < last_height - random_step:
-		_gen_new_platforms(randi_range(-25, 25), player.position.y - 40)
+		_gen_new_platforms(randi_range(-15, 15), player.position.y - 40)
 		last_height = player.position.y
 		random_step = calc_random_step()
 		

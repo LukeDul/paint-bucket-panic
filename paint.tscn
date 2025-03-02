@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b8ml5rwfn7v18"]
+[gd_scene load_steps=15 format=3 uid="uid://bdf1k46l3hhsx"]
 
 [ext_resource type="Script" path="res://paint.gd" id="1_1i43e"]
 [ext_resource type="Texture2D" uid="uid://ih1bxanvjje3" path="res://art/paint/paint_color.png" id="2_euv3v"]

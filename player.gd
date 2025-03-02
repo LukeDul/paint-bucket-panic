@@ -22,7 +22,7 @@ func _process(delta: float):
 	score.text = "Score: %s" % current_score
 	
 	# Check for milestone (every 1000 points)
-	var current_milestone = int(current_score / 1000)
+	var current_milestone = int(current_score / 500)
 	if current_milestone > previous_score_milestone:
 		# Milestone reached!
 		milestone_reached()

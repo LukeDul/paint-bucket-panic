@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6l5g61xoaxy6"]
+[gd_scene load_steps=7 format=3 uid="uid://dlt4bb67pg2y7"]
 
 [ext_resource type="Script" path="res://luke_main.gd" id="1_6ohd6"]
 [ext_resource type="PackedScene" uid="uid://b0grnjrwowxca" path="res://static platform.tscn" id="1_21gqy"]
 [ext_resource type="PackedScene" uid="uid://g5efcmj1tnd1" path="res://player.tscn" id="1_oj63w"]
 [ext_resource type="Texture2D" uid="uid://b3dsni50dn3ep" path="res://art/IMG_7271.PNG" id="2_xj4ws"]
-[ext_resource type="PackedScene" uid="uid://b8ml5rwfn7v18" path="res://paint.tscn" id="3_el7vu"]
+[ext_resource type="PackedScene" uid="uid://bdf1k46l3hhsx" path="res://paint.tscn" id="3_el7vu"]
 [ext_resource type="AudioStream" uid="uid://c7j7ktmeoupco" path="res://game-music-player-console-8bit-background-intro-theme-297305.mp3" id="5_kmyj6"]
 
 [node name="LukeMain" type="Node2D"]
@@ -80,3 +80,4 @@ position = Vector2(0, 19)
 
 [node name="AudioStreamPlayer2DMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_kmyj6")
+parameters/looping = true

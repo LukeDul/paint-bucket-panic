@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://g5efcmj1tnd1"]
+[gd_scene load_steps=40 format=3 uid="uid://g5efcmj1tnd1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_j8pl8"]
 [ext_resource type="Texture2D" uid="uid://bjbsr3764ncvd" path="res://art/IMG_7142.PNG" id="2_2oopr"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://drft1fgku0nu1" path="res://art/newj/IMG_7278.PNG" id="31_g1w32"]
 [ext_resource type="Texture2D" uid="uid://w7k4i826ri48" path="res://art/newj/IMG_7280.PNG" id="32_xoowd"]
 [ext_resource type="Texture2D" uid="uid://k67w7b3ykmdl" path="res://art/newj/IMG_7282.PNG" id="33_p8h1y"]
+[ext_resource type="AudioStream" uid="uid://ok5tsmmuljnv" path="res://game-over-jam-fx-1-00-06.mp3" id="35_s61xq"]
 [ext_resource type="AudioStream" uid="uid://cq787voihdvv8" path="res://cash-register-purchase-87313.mp3" id="39_yl48q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_235x5"]
@@ -249,8 +250,9 @@ offset_left = -12.75
 offset_top = -7.0
 offset_right = 39.25
 offset_bottom = 16.0
-scale = Vector2(0.0115922, 0.0151587)
+scale = Vector2(0.015333, 0.0361484)
 text = "Score: "
+uppercase = true
 
 [node name="AudioStreamPlayer2DJumper" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_ldx33")
@@ -266,3 +268,8 @@ libraries = {
 
 [node name="AudioStreamPlayer2DMilestone" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("39_yl48q")
+volume_db = 3.962
+
+[node name="AudioStreamPlayer2DDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("35_s61xq")
+volume_db = 3.962
