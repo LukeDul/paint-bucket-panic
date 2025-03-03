@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://b0grnjrwowxca"]
 
-[ext_resource type="Script" path="res://plat.gd" id="1_ax7ws"]
+[ext_resource type="Script" uid="uid://vomcuvcasx8f" path="res://plat.gd" id="1_ax7ws"]
 [ext_resource type="Texture2D" uid="uid://cn72k00jc0oit" path="res://art/brand.jpg" id="1_t37e7"]
 [ext_resource type="Texture2D" uid="uid://bg42h1u1sney3" path="res://art/platforms/IMG_7151.PNG" id="2_2x4om"]
 [ext_resource type="Texture2D" uid="uid://nbfntkof5fvp" path="res://art/platforms/IMG_7153.PNG" id="3_mnoem"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=40 format=3 uid="uid://g5efcmj1tnd1"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_j8pl8"]
+[ext_resource type="Script" uid="uid://cnxvm777qf8rh" path="res://player.gd" id="1_j8pl8"]
 [ext_resource type="Texture2D" uid="uid://bjbsr3764ncvd" path="res://art/IMG_7142.PNG" id="2_2oopr"]
 [ext_resource type="Texture2D" uid="uid://d15u1v1p61fp8" path="res://art/run/death/IMG_7190.PNG" id="2_5waso"]
 [ext_resource type="Texture2D" uid="uid://8lirg6s2w6ap" path="res://art/Photo on 2-28-25 at 9.14 PM.jpg" id="2_ebp16"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dts5m8o5qgqxq" path="res://art/IMG_7145.PNG" id="5_4sqhu"]
 [ext_resource type="Texture2D" uid="uid://bxlwqgkv1nvvp" path="res://art/run/death/IMG_7197.PNG" id="5_dv36q"]
 [ext_resource type="AudioStream" uid="uid://wnwldt7ttn66" path="res://cartoon-jump-6462.mp3" id="7_ldx33"]
-[ext_resource type="Script" path="res://camera_2d.gd" id="7_xcw6g"]
+[ext_resource type="Script" uid="uid://bt1pl1m8sx5vv" path="res://camera_2d.gd" id="7_xcw6g"]
 [ext_resource type="Texture2D" uid="uid://bt1rru014oi3n" path="res://art/newj/IMG_7283.PNG" id="8_bt7jp"]
 [ext_resource type="AudioStream" uid="uid://cltcvdk4s2rb4" path="res://splat-305791.mp3" id="9_peqk7"]
 [ext_resource type="Texture2D" uid="uid://d3kxhk3umrvjh" path="res://art/newj/IMG_7284.PNG" id="9_pkgas"]
@@ -214,7 +214,7 @@ resource_name = "run_right_white"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c6kmw"]
 _data = {
-"run_right_white": SubResource("Animation_m2ppf")
+&"run_right_white": SubResource("Animation_m2ppf")
 }
 
 [node name="Player" type="CharacterBody2D"]

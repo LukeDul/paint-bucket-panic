@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://jwbd0dmnabyc"]
 
-[ext_resource type="Script" path="res://moving_platform.gd" id="1_14kc8"]
+[ext_resource type="Script" uid="uid://1nlgwr857ydq" path="res://moving_platform.gd" id="1_14kc8"]
 [ext_resource type="Texture2D" uid="uid://bg42h1u1sney3" path="res://art/platforms/IMG_7151.PNG" id="2_dacl4"]
 [ext_resource type="Texture2D" uid="uid://dqrqli44sfnl8" path="res://Paint_Bucket_Panic_Refs.png" id="3_fsct1"]
 [ext_resource type="Texture2D" uid="uid://b1f1xu7omcstv" path="res://art/platforms/IMG_7155.PNG" id="4_8yaer"]
